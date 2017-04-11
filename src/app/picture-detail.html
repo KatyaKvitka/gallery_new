@@ -1,0 +1,46 @@
+<div class="popup-wrapper" id="popupWrapper" *ngIf="picture">
+    <div class="detail-wrap">
+
+            <div class="image-block">
+                <div class="image-view">
+                    <div class="image-view-detail" [style.background]="getStyle(picture)"></div>
+                </div>
+                <div class="rating-wrap">
+                    <div class="rating-button dislike-button" (click)="addDislike(picture.dislike)">
+                        <p>{{picture.dislike}}</p>
+                    </div>
+                    <div class="rating-button like-button" (click)="addLike(picture.like)">
+                        <p>{{picture.like}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments-block">
+                <p class="comments-heading">Comments: <span>{{picture.messages.length}}</span></p>
+
+                <div id="commentContent" class="comment-content">
+                    <ul class="comment-list">
+                        <li class="comment-item" *ngFor="let selected of picture.messages">
+                            <header class="comment-header">
+                                <p class="author">{{selected.author}}</p>
+                                <time class="post-time">{{selected.data | date:'medium'}}</time>
+                            </header>
+                            <p class="comment-text">{{selected.text}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comment-border-bot"></div>
+
+                <form class="comment-form" id="commentForm" name="main_form" action="#" #galleryForm="ngForm">
+                    <input type="text" class="name-input" name="user_name" placeholder="Type your nickname here..." [(ngModel)]="newName" required="" required/>
+                    <textarea class="comment-input" name="user_comment" placeholder="Write your comment here..." cols="35" rows="50" form="commentForm"
+                    [(ngModel)]="newText"
+                    required="" required></textarea>
+                    <input type="button" class="send-button" id="send_button" name="send_button" (click)="addMessage()" [disabled]="!galleryForm.form.valid"/>
+                </form>
+
+            </div>
+            
+            <button class="close-popup" id="closePopupButton" (click)="closePopup()"></button>
+    </div>
+</div>

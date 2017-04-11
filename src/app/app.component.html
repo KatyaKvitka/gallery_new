@@ -1,0 +1,40 @@
+<div class="wrap">
+<h1 class="main-header">Welcome to the <span class="aquamarin">Imagestock</span></h1>
+<div class="content-wrap main">
+    <div class="image-wrap">
+        <div class="grid">
+            <div *ngFor="let picture of gallery" class="{{picture.addClass}}" (click)="onSelect(picture)"
+            [style.background]="getStyle(picture)">
+                
+                <div class="item-footer">
+                    <div class="comments">
+                        <p>{{picture.messages.length}}</p>
+                    </div>
+                    <div class="rating">
+                        <div class="dislike">
+                            <p>{{picture.dislike}}</p>
+                        </div>
+                        <div class="like">
+                            <p>{{picture.like}}</p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="grid-item add-item">
+                <button class="add-icon" >
+                    <input id="addFile" type="file" name="new-file" (change)="addFile($event)"/>
+                </button>
+
+                <p class="add-picture-text">Add your<br/>Picture</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<picture-detail [picture]="selectedPicture"></picture-detail>
+
+</div>
+

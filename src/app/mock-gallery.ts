@@ -1,0 +1,53 @@
+import { Picture } from './picture';
+
+export const GALLERY: Picture[] = [
+      { id: 1, 
+        messages:[{"author":"test", "text":"test", "data":new Date(1,2)},{"author":"test", "text":"test", "data": new Date(1,2)}], 
+        like:0, 
+        dislike:0, 
+        image:"url('./assets/images/img_007.png')", 
+        addClass: "grid-item grid-item--height2"
+      },
+      { id: 2, 
+        messages:[{"author":"test", 
+        "text":"test", "data":new Date(1,2)},{"author":"test", "text":"test", "data":new Date(1,2)}], 
+        like:5, 
+        dislike:3, 
+        image:"url('./assets/images/img_002.png')", 
+        addClass: "grid-item"
+      },
+      { id: 3, 
+        messages:[], 
+        like:5, 
+        dislike:3, 
+        image:"url('./assets/images/img_003.png')", addClass: "grid-item"
+      },
+      { id: 4, 
+        messages:[], 
+        like:5, 
+        dislike:3, 
+        image:"url('./assets/images/img_004.png')", 
+        addClass: "grid-item absolute"
+      },
+      { id: 5, 
+        messages:[], 
+        like:8, 
+        dislike:0, 
+        image:"url('./assets/images/img_005.png')", 
+        addClass: "grid-item"},
+      { id: 6, 
+        messages:[], 
+        like:5, 
+        dislike:3, 
+        image:"url('./assets/images/img_006.jpg')", addClass: "grid-item"},
+      { id: 7, 
+      messages:[], 
+      like:5, 
+      dislike:3, 
+      image:"url('./assets/images/img_007.png')", addClass: "grid-item"},
+      { id: 8, 
+      messages:[], 
+      like:5, 
+      dislike:3, 
+      image:"url('./assets/images/img_001.png')", addClass: "grid-item grid-item--width2"}
+  ];
